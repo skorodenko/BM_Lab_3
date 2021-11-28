@@ -1,7 +1,7 @@
 
 
 def plot_points(in_file, out_file, interactive=False) -> None:
-    """ This function plots data from file
+    """ This function plots data from file after predetermined affine transformation
     :param in_file: text file with x,y coordiante of points
     :param out_file: file to save plot
     :param interactive: bool, if True show interective pyplot GUI, if False save to file
@@ -20,6 +20,7 @@ def plot_points(in_file, out_file, interactive=False) -> None:
     # Adding ones column
     data = numpy.c_[data, numpy.ones(len(data))]
     
+    # Matrices with transofrmation
     T1 = numpy.matrix(((1,0,0),
                        (0,1,0),
                        (-C[0], -C[1], 1)))
